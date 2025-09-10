@@ -6,6 +6,12 @@ import { Resend } from 'resend';
 import { z } from 'zod';
 
 // Get configuration from environment
+console.log('Environment variables:', {
+  RESEND_API_KEY: process.env.RESEND_API_KEY ? '***SET***' : 'MISSING',
+  SENDER_EMAIL_ADDRESS: process.env.SENDER_EMAIL_ADDRESS || 'NOT SET',
+  PORT: process.env.PORT || 'NOT SET (will default to 3000)'
+});
+
 const apiKey = process.env.RESEND_API_KEY;
 const senderEmailAddress = process.env.SENDER_EMAIL_ADDRESS;
 const port = parseInt(process.env.PORT || '3000');
