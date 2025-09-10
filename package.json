@@ -1,27 +1,28 @@
 {
-  "name": "send-email",
+  "name": "mcp-resend-http-server",
   "version": "1.0.0",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "main": "build/http-bridge.js",
+  "keywords": ["mcp", "resend", "email", "http"],
+  "author": "Resend",
+  "license": "MIT",
+  "description": "HTTP MCP server for sending emails via Resend",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.5.0",
-    "minimist": "^1.2.8",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
     "resend": "^4.1.2",
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@types/minimist": "^1.2.5",
+    "@types/express": "^4.17.17",
+    "@types/cors": "^2.8.13",
     "@types/node": "^22.13.5",
     "typescript": "^5.7.3"
   },
   "type": "module",
   "scripts": {
-    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
-    "lint:fix": "biome check . --write",
-    "lint": "biome check ."
+    "build": "tsc",
+    "start": "node build/http-bridge.js",
+    "dev": "npm run build && npm start"
   }
 }
