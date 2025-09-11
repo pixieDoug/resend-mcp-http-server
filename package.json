@@ -1,7 +1,7 @@
 {
   "name": "mcp-resend-http-server",
   "version": "1.0.0",
-  "main": "build/http-bridge.js",
+  "main": "build/http-bridge-jsonrpc.js",
   "keywords": ["mcp", "resend", "email", "http"],
   "author": "Resend",
   "license": "MIT",
@@ -22,7 +22,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node build/http-bridge.js",
+    "start": "node build/http-bridge-jsonrpc.js",
     "dev": "npm run build && npm start"
   }
 }
